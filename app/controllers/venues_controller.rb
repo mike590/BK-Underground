@@ -12,13 +12,7 @@ class VenuesController < ApplicationController
   end
 
   def show
-    begin
-      @venue = Venue.find(params['id'])
-    rescue => e
-      puts e.message
-      puts e.backtrace[0]
-      puts e.backtrace[1]
-    end
+    @venue = Venue.find(params['id'])
   end
 
   def update
