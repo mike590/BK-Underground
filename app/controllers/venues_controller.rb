@@ -2,6 +2,7 @@ class VenuesController < ApplicationController
 
   def index
     @venues = Venue.all
+    puts "This is actually changing"
   end
 
 
