@@ -2,7 +2,6 @@ class VenuesController < ApplicationController
 
   def index
     @venues = Venue.all
-    puts "This is actually changing"
   end
 
 
@@ -13,9 +12,13 @@ class VenuesController < ApplicationController
   end
 
   def show
-    puts "true"
-    @venue = Venue.find(params['id'])
-    puts @venue.name
+    begin
+      @venue = Venue.find(params['id'])
+    rescue => e
+      puts e.message
+      puts e.backtrace[0]
+      puts e.backtrace[1]
+    end
   end
 
   def update
