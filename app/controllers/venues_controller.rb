@@ -1,26 +1,18 @@
 class VenuesController < ApplicationController
 
   def index
-
+    @venues = Venue.all
   end
 
 
   def create
-    notif_params = notification_params
-    project = Project.find(params[:collaboration][:project_id])
-    creator_id = User.find(project.user_id).id
-    if @current_user.id != creator_id
-      # Someone requests to colaborate on a project
-      notif_params[:user_id] = creator_id
-      new_collab.notifications.create(notif_params)
-      redirect_to project_path(params[:collaboration][:project_id])
-    else
-      # Creator invites someone to collaborate on a project
-      notif_params[:project_id] = project.id
-      notif_params[:description] = "#{@current_user.name} has invited you to colaborate on #{project.title}!"
-      new_collab.notifications.create(notif_params)
-      redirect_to user_path(params[:notification][:user_id])
-    end
+    @venue = Venue.create(permitted_params)
+    flash[:message] = @venue.valid? ? "Success" : "Failure"
+    redirect_to '/'
+  end
+
+  def show
+    @venue = Venue.find(params['id'])
   end
 
   def update
@@ -65,13 +57,10 @@ class VenuesController < ApplicationController
 
   private
 
-  def collaboration_params
-    params.require(:collaboration).permit(:user_id, :project_id, :status)
+  def permitted_params
+    params.require(:venue).permit(:name, :address, :phone_number, :website_url, :neighborhood, :twitter_url, :facebook_url, :instagram_url, :email, :other)
   end
 
-  def notification_params
-    params.require(:notification).permit(:user_id, :project_id, :not_type, :description, :relation)
-  end
 end
 
 

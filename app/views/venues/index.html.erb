@@ -1,1 +1,47 @@
-<p>shit is real</p>
+<% if flash[:message] %>
+	<h1>Tried to create new venue: <%= flash[:message] %></h1>
+	<br>
+<% end %>
+<h2>Create New Venue</h2>
+<%= form_tag("/venues") do %>
+  <%= label_tag(:name, "Name:") %>
+  <%= text_field(:venue, :name) %>
+<br>
+  <%= label_tag(:address, "Address:") %>
+  <%= text_field(:venue, :address) %>
+<br>
+  <%= label_tag(:phone_number, "Phone Number:") %>
+  <%= text_field(:venue, :phone_number) %>
+<br>
+  <%= label_tag(:website_url, "Website URL:") %>
+  <%= text_field(:venue, :website_url) %>
+<br>
+  <%= label_tag(:neighborhood, "Neighborhood:") %>
+  <%= text_field(:venue, :neighborhood) %>
+<br>
+  <%= label_tag(:twitter_url, "Twitter URL:") %>
+  <%= text_field(:venue, :twitter_url) %>
+<br>
+  <%= label_tag(:facebook_url, "Facebook URL:") %>
+  <%= text_field(:venue, :facebook_url) %>
+<br>
+  <%= label_tag(:instagram_url, "Instagram URL:") %>
+  <%= text_field(:venue, :instagram_url) %>
+<br>
+  <%= label_tag(:email, "Email:") %>
+  <%= text_field(:venue, :email) %>
+<br>
+  <%= label_tag(:other, "Other:") %>
+  <%= text_field(:venue, :other) %>
+<br>
+  <%= submit_tag("Create") %>
+<% end %>
+
+<br><br><br>
+<h2>Saved Venues</h2>
+
+<% @venues.each do |v| %>
+	<%= link_to("#{v.name}\n#{v.address}", venue_path(v)) %>
+	<br>
+<% end %>
+

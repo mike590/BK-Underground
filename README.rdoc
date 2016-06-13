@@ -1,28 +1,75 @@
-== README
+Brooklyn Underground
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Plan:
+	- To Do
+		Blog
+			- Artist playing this weekend, reviews, articles, etc...
+		GPS/Venue Database
+			- Make a list of venues, get their contact info and links
+				Name, Phone number, Email, URL, Address, Calendar Link, any Social Media Links
+			- Nearing release of website, start updating all shows weekly
+			- Yelp-like map
+			- name ideas: BKL (BK Live)
+	Start writing articles
+	Begin compiling database of venue information
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+Articles:
+
+	-Album/Song/Concert Reviews/Criticism --- accept submissions
+	-Venue Reviews, Video interview owners and get footage of the bar/venue. Bars could use the videos on their own website
+		Maybe do a bunch of reviews, pick the best 3, make a 5 minute video with them
+		Do multiple of these 5 minute videos for different types of venues, 3 best bar venues, 3 best big venues (Roulette), etc…
+	-Where to Rehearse? Do an article or series about different rehearsal-spaces, breaking down cost, space, location, etc.
+		Could do something similar with recording studios. The studio pieces may resemle both the rehearsal-space series and the venue series, cost ,equipment, and location breakdowns, as well as videos of the studio and interviews with owners/engineers/artists who have recorded there
+	- Video live sets (3-4 songs) of bands in a nice, set up space
+
+
+Weekly:
+
+	-learning music
+	-featured band playing this weekend (title?: Playing this week/end) --- accept submiessions
+
+Who’s Playing Tonight? API/app:
+
+	- Yelp Style map and list
+	-Make it easy for venues to create accounts, with names, contact info, google maps api built in, etc
+	-Make standardized form with per date criteria looking like:
+
+			Date: 5/8/16
+			Cover: $10
+			—————————
+			Band Name: The Values
+			Genre: Classical/BARoque
+			Set Time: 10:00
+			—————————
+			Add Another Band --- Button
+
+	-Plot all venues in BK and LES
+	-Go Pitch To Them Directly In Person
+
+
+Sections:
+
+	Use The City: Content for Musicians (Making Music In The City)
+		- Series on Rehearsal-Spaces
+		- Series on Recording Studios
+		- Series on Venues
+
+	Love The City: Content for Music Goers
+		- Who's Playing Tonight?
+		- Album/Song/Concert Reviews/Criticism
+		- Weekly Featured Band (Who's Playing This Weekend?)
+		- Series on Venues
+
+Community Forum, Band Profile Page, Vanue Profile Page
+Bands can message each other?
+Optimize content (video) for Sharing
+	- in 5 minute video venue review, make 40 second cut, with link to full video and website at the end
+Weekly/Bi-monthly/Monthly Newsletter with music events
+
+
+Need:
+Brand Logo
+Design Style
