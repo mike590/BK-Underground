@@ -12,7 +12,9 @@ class VenuesController < ApplicationController
   end
 
   def show
+    puts "true"
     @venue = Venue.find(params['id'])
+    puts @venue.name
   end
 
   def update
