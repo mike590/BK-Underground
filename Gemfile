@@ -21,6 +21,8 @@ gem 'figaro'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
 
+gem "rails_12factor"
+
 group :development do
   gem 'letter_opener'
   gem 'letter_opener_web'
