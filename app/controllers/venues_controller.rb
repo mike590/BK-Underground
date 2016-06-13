@@ -13,6 +13,7 @@ class VenuesController < ApplicationController
 
   def show
     @venue = Venue.find(params['id'])
+    puts "Check This ------> #{params}"
   end
 
   def update
