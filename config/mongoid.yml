@@ -1,9 +1,10 @@
 development:
   clients:
     default:
-      database: mongoid_test_development
-      hosts:
-        - localhost:27017
+      uri: <%= ENV['MONGODB_URI'] %>
+      # database: mongoid_test_development
+      # hosts:
+      #   - localhost:27017
 
 test:
   host: localhost
@@ -11,8 +12,9 @@ test:
 
 # set these environment variables on your prod server
 production:
-  host: <%= ENV['MONGOID_HOST'] %>
-  port: <%= ENV['MONGOID_PORT'] %>
-  username: <%= ENV['MONGOID_USERNAME'] %>
-  password: <%= ENV['MONGOID_PASSWORD'] %>
-  database: <%= ENV['MONGOID_DATABASE'] %>
+  clients:
+    default:
+      uri: <%= ENV['MONGODB_URI'] %>
+      options:
+        max_pool_size: 100
+        min_pool_size: 1
