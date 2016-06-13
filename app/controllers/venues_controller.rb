@@ -6,7 +6,6 @@ class VenuesController < ApplicationController
 
 
   def create
-    new_collab = Collaboration.create(collaboration_params)
     notif_params = notification_params
     project = Project.find(params[:collaboration][:project_id])
     creator_id = User.find(project.user_id).id
