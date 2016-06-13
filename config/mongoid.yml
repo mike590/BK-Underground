@@ -2,7 +2,7 @@ development:
   clients:
     default:
       database: mongoid_test_development
-      host:
+      hosts:
         - localhost:27017
 
 test:
