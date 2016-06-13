@@ -1,6 +1,6 @@
 class Venue
 	include Mongoid::Document
-	include ActiveModel::Validation
+	# include ActiveModel::Validation
 
 	field :name, type: String
 	field :address, type: String
