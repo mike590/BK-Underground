@@ -1,12 +1,50 @@
-<h1><%= @venue.name %></h1>
-<h3>Address: <%= @venue.address %></h3>
-<h3>Phone Number: <%= @venue.phone_number %></h3>
-<h3>Website URL: <%= @venue.website_url %></h3>
-<h3>Neighborhood: <%= @venue.neighborhood %></h3>
-<h3>Twitter URL: <%= @venue.twitter_url %></h3>
-<h3>Facebook URL: <%= @venue.facebook_url %></h3>
-<h3>Instagram URL: <%= @venue.instagram_url %></h3>
-<h3>Email: <%= @venue.email %></h3>
-<h3>Other: <%= @venue.other %></h3>
+<% if flash[:message] %>
+	<h1>
+		<%= flash[:message] %>
+	</h1>
+<% end %>
+
+<%= button_to "Back", {:controller => :venues,
+	  :action => 'index' }, :method => :get %>
+
+<%= form_for(@venue) do |f| %>
 <br>
-<%= link_to("/", "Back") %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+<br>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+<br>
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+<br>
+  <%= f.label :neighborhood %>
+  <%= f.text_field :neighborhood %>
+<br>
+  <%= f.label :website_url %>
+  <%= f.text_field :website_url %>
+<br>
+  <%= f.label :twitter_url %>
+  <%= f.text_field :twitter_url %>
+<br>
+  <%= f.label :facebook_url %>
+  <%= f.text_field :facebook_url %>
+<br>
+  <%= f.label :instagram_url %>
+  <%= f.text_field :instagram_url %>
+<br>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+<br>
+  <%= f.label :other %>
+  <%= f.text_area :other %>
+<br>
+<br>
+  <%= f.submit "Save changes" %>
+
+<% end %>
+
+<br>
+
+<%= button_to "Delete", {:controller => :venues,
+      :action => 'destroy', :id => @venue.id }, :method => :delete %>
