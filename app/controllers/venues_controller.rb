@@ -13,7 +13,6 @@ class VenuesController < ApplicationController
 
   def show
     @venue = Venue.find(params['id'])
-    render :show
   end
 
   def update
